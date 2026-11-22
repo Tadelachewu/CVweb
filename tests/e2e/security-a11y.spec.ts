@@ -109,5 +109,5 @@ test("no invalid interactive nesting (link inside link/label/button) on dashboar
   expect(await bad(), "dashboard").toBe(0);
   // The real preview keeps its clickable links.
   await page.getByRole("link", { name: "Sample CV", exact: true }).click();
-  await expect(page.getByRole("region", { name: "Live preview" }).locator('a[href^="mailto:"]')).toHaveCount(1);
+  await expect(page.getByRole("region", { name: "Live preview" }).locator('a[href="mailto:tadele.mesfin@example.com"]')).toHaveCount(1);
 });
